@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import dotenv from 'dotenv';
 import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js';
+import cookieParser from 'cookie-parser';
 const port =  3000;
 dotenv.config();
 mongoose.connect(process.env.MONGO).then(()=>{
@@ -11,6 +12,7 @@ mongoose.connect(process.env.MONGO).then(()=>{
     console.log(err);
 });
 const app=express();
+app.use(cookieParser())
 app.listen(port,()=>{
     console.log('server is running  donkeys',port);
 })
