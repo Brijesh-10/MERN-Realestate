@@ -121,7 +121,7 @@ export default function SignIn() {
             <button disabled={loading} className="w-full block bg-black hover:opacity-95 disabled:opacity-80 focus:bg-gray-400 text-white font-semibold rounded-lg px-4 py-3 mt-6">
               {loading ? 'Loading...' : 'Log In'}
             </button>
-            {error && <p className='text-red-500 mt-5'>{error}</p>}
+            {error && <p className='text-blue-500 mt-5'>{error}</p>}
           </form>
 
           <hr className="my-6 border-gray-300 w-full" />
