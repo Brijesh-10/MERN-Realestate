@@ -29,6 +29,8 @@ export default function SignUp() {
       if (data.success === false) {
         setLoading(false);
         setError(data.message);
+        console.log(data)
+
         return;
       }
       setLoading(false);
@@ -36,7 +38,10 @@ export default function SignUp() {
       navigate('/sign-in');
     } catch (error) {
       setLoading(false);
-      setError(error.message);
+      if(error.statusCode === 500){
+      setError("user allready exist ");
+      }
+      console.log(error.message)
     }
   };
   return (
@@ -67,7 +72,7 @@ export default function SignUp() {
 
         <button
           disabled={loading}
-          className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-black text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Sign Up'}
         </button>
