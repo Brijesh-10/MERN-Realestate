@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useRef, useState, useEffect } from 'react';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable, } from 'firebase/storage';
 import { app } from '../firebase';
-import {updateUserStart,updateUserSuccess,updateUserFailure,deleteUserFailure,deleteUserStart,deleteUserSuccess,/*signOutUserStart*/} from '../redux/user/userSlice';
+import {updateUserStart,updateUserSuccess,updateUserFailure,deleteUserFailure,deleteUserStart,deleteUserSuccess,signOutUserStart} from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 export default function Profile() {
@@ -13,8 +13,8 @@ export default function Profile() {
   const [fileUploadError, setFileUploadError] = useState(false);
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
-  // const [showListingsError, setShowListingsError] = useState(false);
-  // const [userListings, setUserListings] = useState([]);
+  const [showListingsError, setShowListingsError] = useState(false);
+  const [userListings, setUserListings] = useState([]);
   const dispatch = useDispatch();
 
 
@@ -90,20 +90,20 @@ export default function Profile() {
     }
   };
 
-  // const handleSignOut = async () => {
-  //   try {
-  //     dispatch(signOutUserStart());
-  //     const res = await fetch('/api/auth/signout');
-  //     const data = await res.json();
-  //     if (data.success === false) {
-  //       dispatch(deleteUserFailure(data.message));
-  //       return;
-  //     }
-  //     dispatch(deleteUserSuccess(data));
-  //   } catch (error) {
-  //     dispatch(deleteUserFailure(data.message));
-  //   }
-  // };
+  const handleSignOut = async () => {
+    try {
+      dispatch(signOutUserStart());
+      const res = await fetch('/api/auth/signout');
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(deleteUserFailure(data.message));
+        return;
+      }
+      dispatch(deleteUserSuccess(data));
+    } catch (error) {
+      dispatch(deleteUserFailure(data.message));
+    }
+  };
 
   // const handleShowListings = async () => {
   //   try {
@@ -185,9 +185,7 @@ export default function Profile() {
           className='border p-3 rounded-lg'
           onChange={handleChange}
         />
-        <input
-          type='password'
-          placeholder='password'
+        <input type='password' placeholder='password'
           onChange={handleChange}
           id='password'
           className='border p-3 rounded-lg'
@@ -199,18 +197,15 @@ export default function Profile() {
           {loading ? 'Loading...' : 'Update'}
         </button>
         <Link
-          className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95'
-         // to={'/create-listing'}
-        >
+          className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95' to={'/create-listing'}>
           Create Listing
         </Link>
       </form>
       <div className='flex justify-between mt-5'>
-        <span
-          onClick={handleDeleteUser} className='text-red-700 cursor-pointer' >
+        <span onClick={handleDeleteUser} className='text-red-700 cursor-pointer' >
           Delete account
         </span>
-        <span /*onClick={handleSignOut}*/ className='text-red-700 cursor-pointer'>
+        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>
           Sign out
         </span>
       </div>

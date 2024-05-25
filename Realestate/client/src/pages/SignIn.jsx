@@ -80,7 +80,7 @@ export default function SignIn() {
     <section className="flex flex-col md:flex-row h-screen items-center">
       <div className="bg-blue-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
         <img
-          src="https://images.unsplash.com/photo-1444313431167-e7921088a9d3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1441&q=100"
+          src="https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_1280.jpg"
           alt=""
           className="w-full h-full object-cover"
         />
@@ -88,7 +88,7 @@ export default function SignIn() {
 
       <div className="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto  md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center">
         <div className="w-full h-100">
-          <h1 className="text-xl font-bold">Abstract UI</h1>
+          <h1 className="text-xl font-bold">Welcome back !</h1>
           <h1 className="text-xl md:text-2xl font-bold leading-tight mt-12">Log in to your account</h1>
 
           <form className="mt-6" onSubmit={handleSubmit}>
