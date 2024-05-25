@@ -197,15 +197,15 @@ export default function Profile() {
           {loading ? 'Loading...' : 'Update'}
         </button>
         <Link
-          className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95' to={'/create-listing'}>
+          className='bg-[black] text-white p-3 rounded-lg uppercase text-center hover:opacity-95' to={'/create-listing'}>
           Create Listing
         </Link>
       </form>
       <div className='flex justify-between mt-5'>
-        <span onClick={handleDeleteUser} className='text-red-700 cursor-pointer' >
+        <span onClick={handleDeleteUser} className='text-red-800 cursor-pointer' >
           Delete account
         </span>
-        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>
+        <span onClick={handleSignOut} className='text-red-800 cursor-pointer'>
           Sign out
         </span>
       </div>
@@ -214,9 +214,11 @@ export default function Profile() {
       <p className='text-green-700 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
-      <button onClick={handleShowListings} className='text-green-700 w-full'>
+      <div className=' flex items-center justify-center'>
+      <button onClick={handleShowListings} className='text-green-700 h-12  bg-black rounded-md text-md w-[30%] hover:bg-[#212a26]'>
         Show Listings
       </button>
+      </div>
       <p className='text-red-700 mt-5'>
         {showListingsError ? 'Error showing listings' : ''} 
       </p>
@@ -226,7 +228,7 @@ export default function Profile() {
           <h1 className='text-center mt-7 text-2xl font-semibold'>
             Your Listings
           </h1>
-          {userListings.map((listing) => (
+          {userListings?.map((listing) => (
             <div
               key={listing._id}
               className='border rounded-lg p-3 flex justify-between items-center gap-4'

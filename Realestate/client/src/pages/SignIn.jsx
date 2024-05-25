@@ -39,45 +39,7 @@ export default function SignIn() {
     }
   };
   return (
-    // <div className='p-3 max-w-lg mx-auto'>
-    //   <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
-    //   <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-    //     <input
-    //       type='email'
-    //       placeholder='email'
-    //       className='border p-3 rounded-lg'
-    //       id='email'
-    //       onChange={handleChange}
-    //     />
-    //     <input
-    //       type='password'
-    //       placeholder='password'
-    //       className='border p-3 rounded-lg'
-    //       id='password'
-    //       onChange={handleChange}
-    //     />
-
-    //     <button
-    //       disabled={loading}
-    //       className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'
-    //     >
-    //       {loading ? 'Loading...' : 'Sign In'}
-    //     </button>
-    //     <OAuth/>
-    //   </form>
-    //   <div className='flex gap-2 mt-5'>
-    //     <p>Dont have an account?</p>
-    //     <Link to={'/sign-up'}>
-    //       <span className='text-blue-700'>Sign up</span>
-    //     </Link>
-    //   </div>
-    //   {error && <p className='text-red-500 mt-5'>{error}</p>}
-    // </div>
-    // src/LoginComponent.js
-
-
-
-    <section className="flex flex-col md:flex-row h-screen items-center">
+  <section className="flex flex-col md:flex-row h-screen items-center">
       <div className="bg-blue-600 hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
         <img
           src="https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_1280.jpg"
