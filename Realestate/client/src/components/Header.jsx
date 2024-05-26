@@ -4,6 +4,7 @@ import Search from './Search/Search.jsx';
 import { useSelector } from 'react-redux';
 import { AcmeLogo } from './AcmeLogo.jsx';
 import { FaBars } from 'react-icons/fa';
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -12,6 +13,23 @@ export default function Header() {
   };
 
   const { currentUser } = useSelector(state => state.user);
+ // const [searchTerm, setSearchTerm] = useState('');
+  //const navigate = useNavigate();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const urlParams = new URLSearchParams(window.location.search);
+  //   urlParams.set('searchTerm', searchTerm);
+  //   const searchQuery = urlParams.toString();
+  //   navigate(`/search?${searchQuery}`);
+  // };
+
+  // useEffect(() => {
+  //   const urlParams = new URLSearchParams(location.search);
+  //   const searchTermFromUrl = urlParams.get('searchTerm');
+  //   if (searchTermFromUrl) {
+  //     setSearchTerm(searchTermFromUrl);
+  //   }
+  // }, [location.search]);
 
   return (
     <header className='bg-gray-900 text-white shadow-md fixed top-0 left-0 w-full z-10'>
@@ -30,7 +48,7 @@ export default function Header() {
             {currentUser ? (
               <img src={currentUser.avatar} alt='profile' className='rounded-full h-7 w-7 object-cover' />
             ) : (
-              <Link to='/profile' className='text-slate-700 ml-2'>
+              <Link to='/profile' className='text-slate-700'>
                 <FaBars className=''/>
               </Link>
             )}
