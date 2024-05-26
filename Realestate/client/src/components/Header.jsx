@@ -14,11 +14,11 @@ export default function Header() {
   const { currentUser } = useSelector(state => state.user);
 
   return (
-    <header className='bg-black text-white shadow-md fixed top-0 left-0 w-full z-10'>
+    <header className='bg-gray-900 text-white shadow-md fixed top-0 left-0 w-full z-10'>
       <div className="flex justify-between items-center max-w-6xl mx-auto py-3 px-4">
         <Link to='/'>
         <div className='flex items-center justify-center'>
-        <AcmeLogo/> <p>Real State</p>
+        <AcmeLogo/> <p>Arcam Estate</p>
         </div>
         </Link>
         <div className='hidden md:flex'>
@@ -30,8 +30,10 @@ export default function Header() {
             {currentUser ? (
               <img src={currentUser.avatar} alt='profile' className='rounded-full h-7 w-7 object-cover' />
             ) : (
-              <FaBars className=''/>
-              )}
+              <Link to='/profile' className='text-slate-700 ml-2'>
+                <FaBars className=''/>
+              </Link>
+            )}
           </button>
         </div>
         <ul className={`flex-col md:flex-row md:flex md:gap-12 ${isMenuOpen ? 'flex' : 'hidden'} absolute md:relative top-full left-0 w-full md:w-auto bg-black md:bg-transparent`}>
