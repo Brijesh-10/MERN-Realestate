@@ -20,7 +20,7 @@ const HomeCarosuals = ({ offerListings }) => {
     >
       <img
         className="cursor-pointer rounded-2xl drop-shadow-lg shadow-lg w-[98%] h-[98%] object-fill"
-        onClick={() => handleImageClick(item.id)}
+        onClick={() => handleImageClick(item._id)}
         src={item.imageUrls[0]}
         alt={item.name}
         onDragStart={handleDragStart}

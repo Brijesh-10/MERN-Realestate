@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-
+import "../components/button.css"
 function ForgotPassword() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: '' });
@@ -68,7 +68,11 @@ const handleSubmit = async (e) => {
                 required
               />
             </div>
-            <button className="w-full block bg-black transition transform hover:scale-95 hover:text-md text-white font-semibold rounded-lg px-4 py-3 mt-6 ">
+            {/* <button className="w-full block bg-black transition transform hover:scale-95 hover:text-md text-white font-semibold rounded-lg px-4 py-3 mt-6 ">
+              Submit
+            </button> */}
+
+            <button className='button-31 mt-4'>
               Submit
             </button>
           </form>
