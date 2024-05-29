@@ -77,7 +77,7 @@ const About = () => {
                   <img
                     className="h-40 rounded w-full object-cover object-center mb-2 xl:mb-0"
                     alt="No alt"
-                    src="https://images.unsplash.com/photo-1635324944940-0c0a9c8f9bf1?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBzcXVhcmV8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
+                    src="https://cdn.pixabay.com/photo/2017/07/08/06/48/sa-rapita-2483668_1280.jpg?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBzcXVhcmV8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
                   />
                 </a>
                 <div className="p-6 rounded-lg dark:divide-undefined">
@@ -99,7 +99,7 @@ const About = () => {
                 <img
                   className="h-40 rounded w-full object-cover object-center mb-2 xl:mb-0"
                   alt="No alt"
-                  src="https://images.unsplash.com/photo-1622547748225-3fc4abd2cca0?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
+                  src="https://cdn.pixabay.com/photo/2020/12/16/00/10/home-5835289_1280.jpg?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
                 />
                 <div className="p-6 rounded-lg dark:divide-undefined">
                   <h2 className="text-lg text-gray-900 title-font mb-0 font-semibold dark:text-gray-200 dark:divide-undefined">
@@ -120,7 +120,7 @@ const About = () => {
                 <img
                   className="h-40 rounded w-full object-cover object-center mb-2 xl:mb-0"
                   alt="No alt"
-                  src="https://images.unsplash.com/photo-1633783156075-a01661455344?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
+                  src="https://cdn.pixabay.com/photo/2018/07/15/13/04/living-room-3539587_960_720.jpg?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
                 />
                 <div className="p-6 rounded-lg dark:divide-undefined">
                   <h2 className="text-lg text-gray-900 title-font font-semibold mb-0 dark:text-gray-200">
@@ -141,7 +141,7 @@ const About = () => {
                 <img
                   className="h-40 rounded w-full object-cover object-center mb-2 xl:mb-0"
                   alt="No alt"
-                  src="https://images.unsplash.com/photo-1631700611307-37dbcb89ef7e?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
+                  src="https://cdn.pixabay.com/photo/2018/02/13/11/09/home-3150500_1280.jpg?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEzfHx8ZW58MHx8fHw%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
                 />
                 <div className="p-6 rounded-lg dark:divide-undefined">
                   <h2 className="text-lg text-gray-900 title-font font-semibold mb-0 dark:text-gray-200">
@@ -411,220 +411,7 @@ const About = () => {
           </a>
         </div>
       </div>
-      <div className="py-6 sm:py-8 lg:py-12">
-        <div className="max-w-screen-2xl px-4 md:px-8 mx-auto">
-          <div className="mb-10 md:mb-16">
-            <h2 className="font-bold text-center mb-4 text-3xl text-slate-900 dark:text-slate-100 md:mb-6 lg:text-4xl">
-              Our competitive advantage
-            </h2>
-            <p className="max-w-screen-md md:text-lg text-center mx-auto">
-              This is a section of some simple filler text, also known as
-              placeholder text. It shares some characteristics of a real written
-              text but is random or otherwise generated.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-12 xl:gap-16">
-            <div className="flex flex-col items-center">
-              <div className="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center text-indigo-500 mb-2 sm:mb-4">
-                <span className="w-full h-full text-primary">
-                  <svg
-                    className="w-full h-full text-primary"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                Growth
-              </h3>
-              <p className="text-center mb-2">
-                Filler text is dummy text which has no meaning however looks
-                very similar to real text.
-              </p>
-              <a
-                className="font-bold transition duration-100 text-primary hover:text-primary-700 active:text-primary-700"
-                href="#"
-              >
-                More
-              </a>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center text-indigo-500 mb-2 sm:mb-4">
-                <span className="w-full h-full text-primary">
-                  <svg
-                    className="w-full h-full text-primary"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                Security
-              </h3>
-              <p className="text-center mb-2">
-                Filler text is dummy text which has no meaning however looks
-                very similar to real text.
-              </p>
-              <a
-                className="font-bold transition duration-100 text-primary hover:text-primary-700 active:text-primary-700"
-                href="#"
-              >
-                More
-              </a>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center text-indigo-500 mb-2 sm:mb-4">
-                <span className="w-full h-full text-primary">
-                  <svg
-                    className="w-full h-full text-primary"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                Cloud
-              </h3>
-              <p className="text-center mb-2">
-                Filler text is dummy text which has no meaning however looks
-                very similar to real text.
-              </p>
-              <a
-                className="font-bold transition duration-100 text-primary hover:text-primary-700 active:text-primary-700"
-                href="#"
-              >
-                More
-              </a>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center text-indigo-500 mb-2 sm:mb-4">
-                <span className="w-full h-full text-primary">
-                  <svg
-                    className="w-full h-full text-primary"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                Speed
-              </h3>
-              <p className="text-center mb-2">
-                Filler text is dummy text which has no meaning however looks
-                very similar to real text.
-              </p>
-              <a
-                className="font-bold transition duration-100 text-primary hover:text-primary-700 active:text-primary-700"
-                href="#"
-              >
-                More
-              </a>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center text-indigo-500 mb-2 sm:mb-4">
-                <span className="w-full h-full text-primary">
-                  <svg
-                    className="w-full h-full text-primary"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                Support
-              </h3>
-              <p className="text-center mb-2">
-                Filler text is dummy text which has no meaning however looks
-                very similar to real text.
-              </p>
-              <a
-                className="font-bold transition duration-100 text-primary hover:text-primary-700 active:text-primary-700"
-                href="#"
-              >
-                More
-              </a>
-            </div>
-            <div className="flex flex-col items-center">
-              <div className="w-12 md:w-14 h-12 md:h-14 flex justify-center items-center text-indigo-500 mb-2 sm:mb-4">
-                <span className="w-full h-full text-primary">
-                  <svg
-                    className="w-full h-full text-primary"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <h3 className="text-lg md:text-xl font-semibold text-center mb-2">
-                Dark Mode
-              </h3>
-              <p className="text-center mb-2">
-                Filler text is dummy text which has no meaning however looks
-                very similar to real text.
-              </p>
-              <a
-                className="font-bold transition duration-100 text-primary hover:text-primary-700 active:text-primary-700"
-                href="#"
-              >
-                More
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+     
       <div className="">
         <div className="mx-auto px-4 max-w-7xl">
           <div className="grid -mx-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -682,7 +469,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> 
     </div>
     </>
   );

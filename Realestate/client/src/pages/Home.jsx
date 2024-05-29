@@ -5,6 +5,7 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
+import HomeCarosuals from '../components/HomeCarosual/HomeCarosuals';
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -48,31 +49,32 @@ export default function Home() {
   return (
     <div>
       {/* top */}
-      <div className='flex flex-col gap-6 p-28 px-3 max-w-6xl mx-auto'>
+      <div className='flex flex-col gap-4 p-24 px-3 max-w-6xl mx-auto'>
         <h1 className='text-slate-700 font-bold text-3xl lg:text-6xl'>
           Find your next <span className='text-slate-500'>perfect</span>
           <br />
           place with ease
         </h1>
-        <div className='text-gray-400 text-xs sm:text-sm'>
-          Sahand Estate is the best place to find your next perfect place to
+        <div className='text-gray-400 text-md sm:text-lg'>
+          Arcam Estate is the best place to find your next perfect place to
           live.
           <br />
           We have a wide range of properties for you to choose from.
         </div>
         <Link
           to={'/search'}
-          className='text-xs sm:text-sm text-blue-800 font-bold hover:underline'
+          className='text-sm sm:text-md text-blue-800 font-bold hover:underline'
         >
           Let's get started...
         </Link>
       </div>
 
       {/* swiper */}
-      <Swiper navigation>
+      <HomeCarosuals offerListings={offerListings} />
+      {/* <Swiper navigation>
         {offerListings &&
           offerListings.length > 0 &&
-          offerListings.map((listing) => (
+          offerListings.map((listing ,i) => (
             <SwiperSlide>
               <div
                 style={{
@@ -80,12 +82,13 @@ export default function Home() {
                   backgroundSize: 'cover',
                 }}
                 className='h-[500px]'
-                key={listing._id}
+                key={i}
               ></div>
             </SwiperSlide>
           ))}
-      </Swiper>
+      </Swiper> */}
 
+      
       {/* listing results for offer, sale and rent */}
 
       <div className='max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10'>
@@ -96,8 +99,8 @@ export default function Home() {
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?offer=true'}>Show more offers</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
-              {offerListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
+              {offerListings.map((listing,i) => (
+                <ListingItem listing={listing} key={i} />
               ))}
             </div>
           </div>
@@ -109,8 +112,8 @@ export default function Home() {
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=rent'}>Show more places for rent</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
-              {rentListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
+              {rentListings.map((listing,i) => (
+                <ListingItem listing={listing} key={i} />
               ))}
             </div>
           </div>
@@ -122,8 +125,8 @@ export default function Home() {
               <Link className='text-sm text-blue-800 hover:underline' to={'/search?type=sale'}>Show more places for sale</Link>
             </div>
             <div className='flex flex-wrap gap-4'>
-              {saleListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
+              {saleListings.map((listing,i) => (
+                <ListingItem listing={listing} key={i} />
               ))}
             </div>
           </div>
@@ -132,3 +135,7 @@ export default function Home() {
     </div>
   );
 }
+
+
+
+

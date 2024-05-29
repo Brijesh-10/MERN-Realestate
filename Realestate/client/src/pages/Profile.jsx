@@ -17,38 +17,46 @@ export default function Profile() {
   const [userListings, setUserListings] = useState([]);
   const dispatch = useDispatch();
 
-
+  const [uploadSuccess, setUploadSuccess] = useState(false);
   useEffect(() => {
     if (file) {
       handleFileUpload(file);
     }
   }, [file]);
 
-  const handleFileUpload = (file) => {
-     const storage = getStorage(app);
-   const fileName = new Date().getTime() + file.name;
-  const storageRef = ref(storage, fileName);
-  const uploadTask = uploadBytesResumable(storageRef, file);
-
-     uploadTask.on( 'state_changed',   (snapshot) => {
-       const progress =(snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-   setFilePerc(Math.round(progress));
-      },
-      (error) => {
-        setFileUploadError(true);
-      },
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>
-          setFormData({ ...formData, avatar: downloadURL })
-        );
-    }
-    );
-   };
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  const handleFileUpload = (file) => {
+    const storage = getStorage(app);
+    const fileName = new Date().getTime() + file.name;
+    const storageRef = ref(storage, fileName);
+    const uploadTask = uploadBytesResumable(storageRef, file);
+
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        setFilePerc(Math.round(progress));
+      },
+      (error) => {
+        setFileUploadError(true);
+        setTimeout(() => {
+          setFileUploadError(false); // Remove error message after 3 seconds
+        }, 5000); // 3000 milliseconds = 3 seconds
+      },
+      () => {
+        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+          setFormData({ ...formData, avatar: downloadURL });
+          setUploadSuccess(true);
+          setTimeout(() => {
+            setUploadSuccess(false); // Remove success message after 3 seconds
+          }, 5000); // 3000 milliseconds = 3 seconds
+        });
+      }
+    );
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -68,6 +76,9 @@ export default function Profile() {
 
       dispatch(updateUserSuccess(data));
       setUpdateSuccess(true);
+      setTimeout(() => {
+        setUpdateSuccess(false); // Remove success message after 3 seconds
+      }, 1000); 
     } catch (error) {
       dispatch(updateUserFailure(error.message));
     }
@@ -162,10 +173,10 @@ export default function Profile() {
           alt='profile'
           className='rounded-full h-24 w-24 object-cover cursor-pointer self-center mt-2'
         />
-        <p className='text-sm self-center'>
+        {/* <p className='text-sm self-center'>
           {fileUploadError ? (
             <span className='text-red-700'>
-              Error Image upload (image must be less than 2 mb)
+              Error Image upload (image must be less than 5 mb)
             </span>
           ) : filePerc > 0 && filePerc < 100 ? (
             <span className='text-slate-700'>{`Uploading ${filePerc}%`}</span>
@@ -174,7 +185,21 @@ export default function Profile() {
           ) : (
             ''
           )}
-        </p>
+        </p> */}
+
+        <p className='text-sm self-center'>
+    {fileUploadError ? (
+      <span className='text-red-700'>
+        Error Image upload (image must be less than 5 mb)
+      </span>
+    ) : filePerc > 0 && filePerc < 100 ? (
+      <span className='text-slate-700'>{`Uploading ${filePerc}%`}</span>
+    ) : filePerc === 100 && uploadSuccess? (
+      <span className='text-blue-500'>Image successfully uploaded!</span>
+    ) : (
+      ''
+    )}
+  </p>
         <input type='text' placeholder='username' defaultValue={currentUser.username} id='username'
           className='border p-3 rounded-lg' onChange={handleChange}/>
         <input
@@ -192,12 +217,12 @@ export default function Profile() {
         />
         <button
           disabled={loading}
-          className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:bg-slate-300 hover:text-lime-700 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Update'}
         </button>
         <Link
-          className='bg-[black] text-white p-3 rounded-lg uppercase text-center hover:opacity-95' to={'/create-listing'}>
+          className='bg-[black] text-white p-3 rounded-lg uppercase text-center hover:bg-gray-500 ' to={'/create-listing'}>
           Create Listing
         </Link>
       </form>
@@ -211,12 +236,12 @@ export default function Profile() {
       </div>
 
       <p className='text-red-700 mt-5'>{error ? error : ''}</p>
-      <p className='text-green-700 mt-5'>
+      <p className='text-blue-500 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
       <div className=' flex items-center justify-center'>
-      <button onClick={handleShowListings} className='text-green-700 h-12  bg-black rounded-md text-md w-[30%] hover:bg-[#212a26]'>
-        Show Listings
+      <button onClick={handleShowListings} className='text-white h-12  bg-blue-900 rounded-md text-md w-[30%] hover:bg-[#297250]'>
+        Your Listings
       </button>
       </div>
       <p className='text-red-700 mt-5'>

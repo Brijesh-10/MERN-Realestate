@@ -30,6 +30,9 @@ export default function SignIn() {
       console.log(data);
       if (data.success === false) {
         dispatch(signInFailure(data.message));
+        setTimeout(() => {
+          dispatch(signInFailure(null)); // Remove error message after 3 seconds
+        }, 3000); 
         return;
       }
       dispatch(signInSuccess(data));
@@ -77,10 +80,10 @@ export default function SignIn() {
             </div>
 
             <div className="text-right mt-2">
-              <a href="#" className="text-sm font-semibold text-gray-700 hover:text-blue-700 focus:text-blue-700">Forgot Password?</a>
+            <Link to="/forgot-password"  className="text-sm font-semibold  text-blue-700 focus:text-blue-700">Forgot Password?</Link>
             </div>
 
-            <button disabled={loading} className="w-full block bg-black hover:opacity-95 disabled:opacity-80 focus:bg-gray-400 text-white font-semibold rounded-lg px-4 py-3 mt-6">
+            <button disabled={loading} className="w-full block bg-black transition transform hover:scale-95 hover:text-md disabled:opacity-90 focus:bg-gray-400 text-white font-semibold rounded-lg px-4 py-3 mt-6">
               {loading ? 'Loading...' : 'Log In'}
             </button>
             {error && <p className='text-blue-500 mt-5'>{error}</p>}

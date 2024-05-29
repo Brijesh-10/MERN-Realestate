@@ -13,23 +13,7 @@ export default function Header() {
   };
 
   const { currentUser } = useSelector(state => state.user);
- // const [searchTerm, setSearchTerm] = useState('');
-  //const navigate = useNavigate();
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const urlParams = new URLSearchParams(window.location.search);
-  //   urlParams.set('searchTerm', searchTerm);
-  //   const searchQuery = urlParams.toString();
-  //   navigate(`/search?${searchQuery}`);
-  // };
 
-  // useEffect(() => {
-  //   const urlParams = new URLSearchParams(location.search);
-  //   const searchTermFromUrl = urlParams.get('searchTerm');
-  //   if (searchTermFromUrl) {
-  //     setSearchTerm(searchTermFromUrl);
-  //   }
-  // }, [location.search]);
 
   return (
     <header className='bg-gray-900 text-white shadow-md fixed top-0 left-0 w-full z-10'>
@@ -44,13 +28,10 @@ export default function Header() {
         </div>
         <div className='flex md:hidden items-center'>
           <Search /> {/* Use the Search component for mobile */}
-          <button onClick={toggleMenu} className='ml-2 focus:outline-none'>
+          <button onClick={toggleMenu} className='ml-2 focus:outline-none '>
             {currentUser ? (
               <img src={currentUser.avatar} alt='profile' className='rounded-full h-7 w-7 object-cover' />
-            ) : (
-              <Link to='/profile' className='text-slate-700'>
-                <FaBars className=''/>
-              </Link>
+            ) : (<FaBars className=''/>
             )}
           </button>
         </div>

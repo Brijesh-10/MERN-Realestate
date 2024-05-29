@@ -46,7 +46,7 @@ export default function CreateListing(){
           setUploading(false);
         })
         .catch((err) => {
-          setImageUploadError('Image upload failed (2 mb max per image)');
+          setImageUploadError('Image upload failed (10 mb max per image)');
           setUploading(false);
         });
     } else {
@@ -240,7 +240,7 @@ export default function CreateListing(){
                 className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
                 value={formData.bedrooms}/>
-              <p>Beds</p>
+              <p>Bedroom</p>
             </div>
             <div className='flex items-center gap-2'>
               <input
@@ -252,7 +252,7 @@ export default function CreateListing(){
                 className='p-3 border border-gray-300 rounded-lg'
                 onChange={handleChange}
                 value={formData.bathrooms}/>
-              <p>Baths</p>
+              <p>Bathroom</p>
             </div>
             <div className='flex items-center gap-2'>
               <input
@@ -267,7 +267,7 @@ export default function CreateListing(){
               <div className='flex flex-col items-center'>
                 <p>Regular price</p>
                 {/* {formData.type === 'rent' && ( */}
-                  <span className='text-xs'>($ / month)</span>
+                  <span className='text-xs'>(Rs / month)</span>
                 {/* )} */}
               </div>
             </div>
@@ -286,7 +286,7 @@ export default function CreateListing(){
                   <p>Discounted price</p>
 
                   {/* {formData.type === 'rent' && ( */}
-                    <span className='text-xs'>($ / month)</span>
+                    <span className='text-xs'>(Rs / month)</span>
                   {/* )} */}
                 </div>
               </div>
@@ -313,7 +313,7 @@ export default function CreateListing(){
               type='button'
               disabled={uploading}
               onClick={handleImageSubmit}
-              className='p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opacity-80'
+              className='p-3 text-green-700 border border-green-700 bg-slate-300 rounded uppercase hover:shadow-lg disabled:opacity-80'
             >
               {uploading ? 'Uploading...' : 'Upload'}
             </button>
